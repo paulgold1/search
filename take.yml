@@ -1,0 +1,13 @@
+name: Take Actions
+on:
+  issue_comment:
+    types: {created, edited, deleted}
+
+jobs:
+  take-issue:
+    runs-on: ubuntu-latest
+    steps:
+    - name: take an issue
+      uses: bdougie/take-action@debug
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
